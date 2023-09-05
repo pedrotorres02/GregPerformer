@@ -1,0 +1,895 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="cumprirEvento" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_strDescricaoAgenda" Type="InArgument(x:String)" />
+    <x:Property Name="In_strFaseProjuris" Type="InArgument(x:String)" />
+    <x:Property Name="In_strData" Type="InArgument(x:String)" />
+    <x:Property Name="In_strTipoDocumento" Type="InArgument(x:String)" />
+    <x:Property Name="In_boolDocumentoExiste" Type="InArgument(x:Boolean)" />
+    <x:Property Name="In_strPathPasta" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1364,9403</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>cumprirEvento_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="cumprirEvento" sap:VirtualizedContainerService.HintSize="1374,9338" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="terminou" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Projuris Web - \\Remote" sap:VirtualizedContainerService.HintSize="1312,9227" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="1278,8936" sap2010:WorkflowViewState.IdRef="Sequence_55">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[In_strDescricaoAgenda.Contains(&quot;PRZ&quot;) Or In_strDescricaoAgenda.Contains(&quot;AGENDA-PRZ - PUBLICAÇÃO IMPORTADA&#xA;&quot;)]" sap:VirtualizedContainerService.HintSize="1216,522" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[terminou]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[terminou]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[In_strFaseProjuris =&quot;NÃO PRECISA CUMPRIR EVENTO&quot;]" sap:VirtualizedContainerService.HintSize="1216,522" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[terminou]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[terminou]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[terminou = True]" sap:VirtualizedContainerService.HintSize="1216,7697" sap2010:WorkflowViewState.IdRef="If_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="1182,7435" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState DisplayName="cumprir evento ou editar cumprimento de evento" sap:VirtualizedContainerService.HintSize="1140,2328" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Timeout="3" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="cumprir evento" sap:VirtualizedContainerService.HintSize="636,2111" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="click cumprir evento " sap:VirtualizedContainerService.HintSize="574,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable CvElementArea="216, 457, 99, 27" CvTextArea="224, 462, 84, 16" CvTextArgument="Cumprir Evento" CvType="Button" DesignTimeRectangle="272, 456, 99, 28" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Cumprir Evento'" Guid="f6b6ddf1-719c-4bfc-b0fd-37dd10ff5fdf" InformativeScreenshot="001794e57f85224752424907e6261159.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArgument="Status:" CvType="Text" DesignTimeRectangle="299, 202, 43, 13" ElementType="Text" FriendlyName="'Status'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                        <Sequence DisplayName="cumprir evento" sap:VirtualizedContainerService.HintSize="574,1799" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence DisplayName="selecionar data" sap:VirtualizedContainerService.HintSize="512,877" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click data" sap:VirtualizedContainerService.HintSize="450,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable CvType="Icon" DesignTimeRectangle="504, 337, 21, 22" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'wfica32.exe Projuris'" Guid="3db8fe30-93a5-43f4-a653-1632be194ba1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABUAAAAWCAYAAAAvg9c4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACqSURBVEhL7ZMxCsMgAEW9jnf1Gl7F0dHR1dGxo+UFfmmDJBobuvTDI5/gfxkkpt0Qk1Jqwnu/hGJyfTRAupIY40v8IS2lXEL5qhRIV5pz3gghNOfcEJxlQw6lvfERw1L1d4iehL4sFdbaDfqUlOgwUUem0H8j5SZ18/pAD2RA5yybWuu5lDBS1PfvTqX8ajArZTMkZTDClJQwUtT376akMwxJr/CX3ilt7QmRYEER77MuxwAAAABJRU5ErkJggg==" InformativeScreenshot="48da1c9426aaa5006d52423a5af6fe64.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvTextArgument="Evento" CvType="Text" DesignTimeRectangle="352, 298, 57, 16" ElementType="Text" FriendlyName="'Evento'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <Sequence DisplayName="down enter" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="down" KeyModifiers="None" SpecialKey="True">
+                                <ui:SendHotkey.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a56da448-0c7d-4fb3-9644-90c19e64fc34" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' aaname='Projuris Web - \\Remote' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:SendHotkey.Target>
+                              </ui:SendHotkey>
+                              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                <ui:SendHotkey.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a56da448-0c7d-4fb3-9644-90c19e64fc34" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' aaname='Projuris Web - \\Remote' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:SendHotkey.Target>
+                              </ui:SendHotkey>
+                            </Sequence>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="450,137" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="del" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a56da448-0c7d-4fb3-9644-90c19e64fc34" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' aaname='Projuris Web - \\Remote' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DelayBetweenKeys="200" DisplayName="Private: Send Hotkey" sap:VirtualizedContainerService.HintSize="450,137" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="[In_strData]" KeyModifiers="None">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f1ae3abf-7ace-4f2c-aadd-24e0ff29eee2">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                          </Sequence>
+                          <Sequence DisplayName="selecionar faseProjuris" sap:VirtualizedContainerService.HintSize="512,570" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click data" sap:VirtualizedContainerService.HintSize="450,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable CvElementArea="532, 337, 549, 24" CvTextArea="537, 342, 50, 12" CvTextArgument="Selecione" CvType="InputBox" DesignTimeRectangle="532, 337, 549, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Fase'" Guid="67f86e3c-6f8d-457e-ad11-568b6935f3ad" InformativeScreenshot="528a0d8a2056ac545ffa78c69c582f82.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvTextArgument="Evento" CvType="Text" DesignTimeRectangle="352, 298, 57, 16" ElementType="Text" FriendlyName="'Evento'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DelayBetweenKeys="200" DisplayName="Private: Send Hotkey" sap:VirtualizedContainerService.HintSize="450,137" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="[In_strFaseProjuris]" KeyModifiers="None">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f1ae3abf-7ace-4f2c-aadd-24e0ff29eee2">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <Sequence DisplayName="down enter" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="down" KeyModifiers="None" SpecialKey="True">
+                                <ui:SendHotkey.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a56da448-0c7d-4fb3-9644-90c19e64fc34" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' aaname='Projuris Web - \\Remote' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:SendHotkey.Target>
+                              </ui:SendHotkey>
+                              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                <ui:SendHotkey.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a56da448-0c7d-4fb3-9644-90c19e64fc34" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' aaname='Projuris Web - \\Remote' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:SendHotkey.Target>
+                              </ui:SendHotkey>
+                            </Sequence>
+                          </Sequence>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click salvar" sap:VirtualizedContainerService.HintSize="512,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable CvElementArea="954, 661, 78, 25" CvTextArea="977, 667, 32, 12" CvTextArgument="Salvar" CvType="Button" DesignTimeRectangle="954, 661, 78, 25" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Salvar'" Guid="5c337345-783a-433c-8732-646d63c8e2b7" InformativeScreenshot="f11558772d6ce9816d18f0ce3f94b211.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CvTextArgument="Evento" CvType="Text" DesignTimeRectangle="352, 298, 57, 16" ElementType="Text" FriendlyName="'Evento'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="editar cumprimento do evento" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable CvTextArgument="Cumprir Evento" CvType="Text" DesignTimeRectangle="223, 462, 88, 15" DesignTimeScaleFactor="1" FriendlyName="'wfica32.exe Projuris'" Guid="c592b3cf-45c2-4505-8c4f-80c1e4afd026" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFgAAAAPCAYAAABgHgh7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAZ7SURBVFhH1VbrT5NXHCZzS6YuMYgoXqCUq7VQLAW8bBjnspEtuszL1CCUFsptZVJQFCHoLlnmlqlbootDBHSU+02gXIQioMMpW5fFhWRf+MpH/oRn55z3PW9Py8vNEJN9eNKe3/X5Ped3CgGvf3gd8SUj2FMxhY3HnUgpn0Dq5TEEHr+BUEsT9lc9gaFkEPrifgS89z22ZjYgoqATh656EGv5FeG5rdhR0Ifk0il8cPZPRB1uwDpSc7PDCdO1R4ixdyPsWCPCz7RA62iD5nwbInLboTv5APq8ZsR/1oEE+wOEkbpbTtUh/nMXkstHEZ7TwnpGF3ZjT9VjhOW3Y//XvyPMRvoRXpqcVujODsN44TEM50ahye1AKMnROXpgLH8IQ5kL+h8nsSvtFqLO9yL6+lOE7f0BoZ/WI+6XfxB5uBZbs5tguDiCxMoxJJQNI6liDIbSIYRam9mckbZGRBOO+qJOfHzjb2gs9xFbQPpn1kGb3YC0L/5FXNkQNmTfROrVCaScfYwDxR5EZLYhobwLOy91I2BLei0MjofQWLsQU9CP3aUj2GnvQuIFF4KzWhHjGEb8xQns+fIPbM/tRsrl59Cfe4RNGc1IynETEZ5graULb2V2wmQfQ+KZDpiymmG+NY1A88+Itd5DorkFpsJemC5PQEsGCc93IdXxDInF3dCa7yI6vwH7rjxE0pVBbC24hyBbDcJLW6HJ70Vy1TPoHW6s/+QuTOW/IbLAhUj7AOOhzR0kQvdjm7kL27I6EFs0BNOlceiKB7A54z425P2EJHM1EbgJQRVNMOa1Iv58PzZWkRrWVrIcvTj4zQuyBEN488gdRBBecefGEVE4gMRLT5F6YQg7rQ0I/Oga9LYmRGXWw0gWIj6vBe9WuLHu0D0Yi0eIBu1kGRvwxvt3oSt8joi8AQRlVmPN6TsIiLLUwUhuaPOx23i7YhxxRb0IPHobmuxGxFU8QUheN4Kt7dAU9iHE0o7dZRNsa7ZktGBb2n02aHB5L16z3MTeyh4cJd8TjnyH7QfKkVjag4OOTqRkVEOXXoOookFszHEh8HQrITpAMAydrRtRtjYyeA8MFX0Iyq3D2qwaaC72E5LN2EUGCLN0IvgEeS1ZndhhbkdcySi09n7sq/wLsYVuRJKBDCVjiCHCBJ2qJ9vXCGPZCHYV1SO5yEm2vxbrrdUwVY1CT7Z1jbkB8WSGkJMtiCYXFGnrJy+mD7F2slxFbmzP7kFwRjs2naiFJovE5JKFI4tnLBlGQvEQtNY2Bp1tAgZrD5KZ4OPkFUwhvHgKUY5RvPPVGJK+fYEAbU4HdHYX6CeDcwazc3OYE+B2yn45TuefI0PNJkLxL6eOe1bu7etT/PQ7+az0+HKl8Lj94hbAivj42UQsVocJzMHJqg3FkpdopGCxuFWuwzjPTKvHcCxVR83uBw/TZeV1vALLm6sqLoFzxrsZFN7BPHDPkjy3lM/g8Sj1lLNcY9YzzeL5tin96MaSejRmbnYGlSx/Fk41n8zBl4fXpjaL1NvLg/fnNtaD1HYKL4LnU3G5jYL1F+cjELURMU9gkbwISkpdYJkwH7zG29h7loRSXkiNXIf9DMgi8jw+sJA3zydgoQ0WBZ3HQYhnm0n5+PVgccplTnvjhDxFD36hgp9DEXghohxLCSz66Ib6n2lzlkOIcLtPrDwgE5RC3GB/nwDOQ9wwFidvJBWIxtBa2pxJhQvPVy5CpYdXVD+Bhdrz6gg2inkCi0kM6U726ZxeQGDi5wKHyLFqAnvcTmlQz6Ri94mlAzLSTqmOv8CyT8ylUHhwG80lCFFEkUSV+Ewym3gZFIrAfqJxUUPSfQVmPadpT8pH4iTNpiawTIg2oETdNVKCAtlPBRbFUZpQ33IEdr1agRXOM7MMlYybJDCdkfYQsRKB2QaT2SU+EsQNFusygfmBEqI3qiYyG4QSIN+pjTZU22AKLprPWRZYrC+dqYjkvIjAIS8pMMuTBVaEoDMScTg3juUITF+h6JPOch95LqWe3C+AHWQj+87+8EhCcEiJ0lPjNqeLxPkJzAdTtlI8Kxvs+1+Ek/hZX1FEel5AYM6XgwvM61GwVyL7aS/pQr3gi8TB/ILAXAtla3kfGs9+GmRO5MwhiiuCCbwUOFl/qMUuBi6wmm8lUONCoRa7GNRqUKjFLobF8pYl8GphtQT+P2EZAtcsw6YWMx/zBX6ZOqvF51XUceI/YDL4LWF6dfwAAAAASUVORK5CYII=" InformativeScreenshot="15813a89bcb1301dba42d57333437c9d.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                  <If Condition="[In_boolDocumentoExiste = False]" sap:VirtualizedContainerService.HintSize="1140,4979" sap2010:WorkflowViewState.IdRef="If_6">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="692,4717" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click documento do processo" sap:VirtualizedContainerService.HintSize="650,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable CvElementArea="331, 424, 202, 30" CvTextArea="341, 432, 181, 15" CvTextArgument="documento do evento do processo" CvType="Button" DesignTimeRectangle="331, 424, 202, 30" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'documento do'" Guid="3c97e731-324e-4204-b8c9-ad0b22c19536" InformativeScreenshot="e9b596717fc7d654dd9de041418f473e.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArgument="Status:" CvType="Text" DesignTimeRectangle="299, 202, 43, 13" ElementType="Text" FriendlyName="'Status'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                        <Sequence DisplayName="existe doc" sap:VirtualizedContainerService.HintSize="650,4432" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence DisplayName="anexar doc" sap:VirtualizedContainerService.HintSize="588,1404" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click adicionar" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable CvElementArea="272, 455, 66, 28" CvTextArea="279, 463, 53, 12" CvTextArgument="Adicionar" CvType="Button" DesignTimeRectangle="272, 455, 66, 28" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Adicionar'" Guid="e6552c8c-3fba-4a7e-af70-d233a02dfd08" InformativeScreenshot="c1ff90ca4aab1538e678c30b1bba412b.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvTextArgument="Status:" CvType="Text" DesignTimeRectangle="299, 202, 43, 13" ElementType="Text" FriendlyName="'Status'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click selecionar arquivos" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable CvElementArea="351, 319, 115, 24" CvTextArea="358, 324, 102, 15" CvTextArgument="Selecionar Arquivos" CvType="Button" DesignTimeRectangle="351, 319, 115, 24" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Selecionar Arquivos'" Guid="c4d79352-7c04-423e-9302-7be06d40f1bb" InformativeScreenshot="ec626906c92db75ef102d1b1a4179182.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvTextArgument="Dados Gerais" CvType="Text" DesignTimeRectangle="352, 275, 108, 17" ElementType="Text" FriendlyName="'Dados Gerais'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click selecionar doc" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable DesignTimeRectangle="17, 189, 109, 26" DesignTimeScaleFactor="1" FriendlyName="'wfica32.exe Open'" Guid="c0174f43-f1bb-461e-815d-ee00580c553a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG0AAAAaCAYAAAC939IvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJBSURBVGhD7ZghcIMwFIYjJyuxk5WTsZWVk7XIykksEonEIpHIWiQSGVtZOfmWPwSaFMZGYXdkl+/uv0KACD7eC5SRxzm8NAfx0hzES3MQL81BvDQHeVra7XajpmlGU9f1aDzr8LQ0yMnzfJCiKKgsyz6Xy0UJw7ZnHRZLY6wg9lIR2wmZT0pyQR8pcqWzzCm+emkrs7I0QUUpxws7U9LKkMk5huFSvDxKIeOkNh8RKfHvjg3APPb8Y9el3DiHp3p0e8ySJoTo210n7XWvpWlxUSIoyQTFRnA+2uY0Y4ImpM3Cnkek3JaiHgBGoflcybF0o81hljTc+MPhSFEU9dL4oaBdkPc5nRv6iAWdo3u2Ju1xHxVmCds4s6UdPxnFVaikYR/Sgn0mq0y2Spm3Y63EdeGntj1C8DQT0sq2EtC22rZpHDNufNfahgImpKkqC+WIO8yShnWpk9U0bfUEr5klbbeviL/XfQLevu4/L61dX9RwGUop3Q02zsf4ZKnYc3ftUe1CWrftCIulMRbLJPpXJ7hYWVxp/Zi5b2zrNelehY/g3Hsl3sVLdKV9d+UWWSQNMn6Tqqr+VppGVZCU8nN7tPnXa5op7XptXzDwNmkGxxBIMgNx0yyXBiBuWHHT0tq2+0/fHiENgZQxIC1JEsqyTP3NNY8F0vRNH7S+nh+kAd1i+3k2vM7NkoZqSdN0IA2CulZoVhu+6zzrM0sahOEbDb8mZntElZnxrM8saZ5t4KU5iJfmIF6ag3hpDuKlOQfRFwP6QbJDt3ltAAAAAElFTkSuQmCC" InformativeScreenshot="11332869515ece917f99398bef50b892.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Open - \\Remote' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:CommentOut>
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click 'wfica32.exe Open'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable DesignTimeRectangle="171, 334, 258, 52" DesignTimeScaleFactor="1" FriendlyName="'wfica32.exe Open'" Guid="5292f0c3-032d-4538-8cb7-600d0d12fd5c" ImageBase64="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" InformativeScreenshot="5cdae4552970a90255c96faae627c65e.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Open - \\Remote' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:CommentOut>
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click 'wfica32.exe Open'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable DesignTimeRectangle="179, 174, 121, 21" DesignTimeScaleFactor="1" FriendlyName="'wfica32.exe Open'" Guid="81eb084a-3499-41b4-865c-5d88d05ebb5b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHkAAAAVCAYAAABizEFoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIxSURBVGhD7Zgtd4MwFIb5W9jJysnayMnK2cpK5OxkJRKLRCJjIyOR2b35gCR8BDrWZm2ec95TIPTC7gOBLhMh+FV07DIKp+dROl7rLyViIigZhYquhCXeC6bNJ2yrYBtKHcLaM3wmYmO9ZClagZKlaF9yc4LPRGxsk6xFG8m+6CQ5Tm6TXB9VQHKHz2yd7ZJLQbJcFFSvJv6EJPkFuElyW73LGMmc4tv2RUrm9Fvus44k+R5slwwxkjH2TyiUHLybaSHyLBMZJC8KV7I1hiHqmuop8vHY1LZJZo+rLjRCchgjsObu229Dls49YoKSUZ6R27EvGV8yaz9kOOcwjRP9zSmwoYMMWmBj7WZbomRDhyaizNzvaElEtmjWED7uUFtJH1aJHluqETerJRvBmKY8yKBk1pA+QckoLi/E0BeroVKqddcAJdFNnRiT6DtrJN9n6bjOMqBrmtlBBk9isUbcrJJsC8Z/eBjJ9NGSNequsmYBn0VBU5JnLqhnlczakyPYlyxTwzLkWNGdp2vTbDo9XVtgrfnx0HFtWWrfca2lGnGzSrKf5vomYwvGHL7bgGQAn6PQLEzoxcttoGqyGZPNtmo5L0hTzB7Xlwx459E/95fOPWJ2lawSkBwDc1PyFvaocSdWS27rYx9HshfOHvlnu3e7ylgEPuszeL7+5kz3qHEvgpINnFWOaNpe4a2b69H4sX9PB6f2Gfao8QhWS078X5LkFyBJfgGS5BcgSX56hPgB1c54RXbzXOUAAAAASUVORK5CYII=" InformativeScreenshot="4e51f08c7a8994df6ec19dbb1b8b5df6.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Open - \\Remote' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:CommentOut>
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'wfica32.exe Open'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable DesignTimeRectangle="559, 132, 64, 18" DesignTimeScaleFactor="1" FriendlyName="'wfica32.exe Open'" Guid="e0b767c2-9955-4768-8ee8-a21e3679184c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAASCAYAAADrL9giAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADySURBVFhH7ZSLDQMhCIa7r2u4imO4hms4AvVBK3p45+Muaapf0lACOfAXfMHibAHQLssWAG0VJQQI8tMWA44yJmnQcRX3sDlWgxQSaxmX8/l/Pw0CpOJWSxBSR8dRNhYOowx6xzjHdc4PCeBJPtNYuDmFzooCOLQUEIegrfFaTrVOENmtSliZJPYoQysQ3RYB8v0m2/GFz6HfzutkNY1i35Ueuh/BdIa6AFzjNficigB4+7Qf+uaM0L0CCeaA+AYcGj+BzzkXYO7IObcK4KclXchzAsyOPWVaADqOed4DAnjKNXh6Bf6dLQDaZdkCoF0UgDdZrDMJmGsn0wAAAABJRU5ErkJggg==" InformativeScreenshot="7be0a127daa0e06e9d6ec00dbc6f98a8.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Open - \\Remote' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:CommentOut>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click selecionar arquivos" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="200, 406, 270, 21" DesignTimeScaleFactor="1" FriendlyName="'wfica32.exe Open'" Guid="32f40c1a-e873-4ef6-ba2d-c98d9c2b0e3f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQ4AAAAVCAYAAAC31wBJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABaSURBVHhe7dRBDQAwCAAx/JtmCQp2/1ZEZwEicQCZOIBMHEB2ccz4A/gnDiATB5CJA8jEAWTiADJxAJk4gEwcQCYOIBMHkIkDyMQBZOIAMnEAmTGATBxAtPsAzb0XvoxGEZQAAAAASUVORK5CYII=" InformativeScreenshot="064f0a44c39bd1ca5cf53087d6a1c2d3.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Open - \\Remote' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="132, 408, 62, 20" FriendlyName="'wfica32.exe Open'" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD4AAAAUCAYAAADV9o4UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEGSURBVFhH7ZPREcMgCIZdyZlYxXVcxXV8pGIlQUNizbV3bfXhu8Mo8P9RTIwRZ2QZn41l/IhHMAaNwLqAMTi0xqILfIbj36JjvGdqGVf2vpsbxuX35kweAx4NQF/lEeW8g3p8yr6HfawM+DrH77XBRwzOqjVUDT71sw4Dn0kMzTg1PDcu40RqVgmSNdkUCbr6QVvdlMPCc44wW9U40UBnxoyLIup3EVd/urDdmparrIsp5tCjV+MlDU/ebFy7PUlPNOcHdFbpMVTjmjfOOMXNvB1oa4p1eY5ZdDag9eitKVY0fPSp01771IaeOt1yybOAcOfGaa1pGDP+3yzjs7GMz8YyPhcRHyaTaNDPvR2lAAAAAElFTkSuQmCC" SearchSteps="Image" TargetType="ImageBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DelayBetweenKeys="200" DisplayName="Private: Send Hotkey" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="SendHotkey_18" Key="[In_strPathPasta]" KeyModifiers="None">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f1ae3abf-7ace-4f2c-aadd-24e0ff29eee2">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click salvar" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="506, 432, 87, 26" DesignTimeScaleFactor="1" FriendlyName="'wfica32.exe Open'" Guid="dd845b2f-60df-4e9b-99c1-6d6f070db182" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFcAAAAaCAYAAADCDsDeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEUSURBVGhD7ZbNDcMgDEZZiXVYI0dWYRVWYY0c3QABwk8rVYpLqL7DO2BMDk/2p4h93wnwALmMQC4jWe62beBmKrnOOXAjkMsI5DICuYxALiOQy8h8uUaRECIjtR33LchcuUGsJG1LTcv/ETxVrhepTFO3mqRQZK61RZkn94NELdM0G1J+so3vHcRG+EaKlPSt840ucTNrE+bKlZrs4K5MtBd1CEp9QWaJkSAxRcoRMVHi+UaZXC/if8v0yX0nt5rcSyYbdYqvpvYkCO3ftOdf8fDM7UXlN1XfFciNDFbWr3TJyLji+dyJH+Up5Baa/9x6kqMopeT4vo0GxMI39KJWAnIZgVxGHi53bSCXEchlBHLZcPQCFhTe5x/GAK4AAAAASUVORK5CYII=" InformativeScreenshot="8cfdb12cb3b3fbe675487206f534af94.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Open - \\Remote' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="604, 431, 91, 29" FriendlyName="'wfica32.exe Open'" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFsAAAAdCAYAAADFNxDoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEzSURBVGhD7dbBEYMgEIVhWqId2vBIK7RCK7bhkSwoIMnqZDK6Zmbf4T8Imsx8IIlZliUhmYAtGLAFA7ZgH9jTNKEbOsSe5xldGLAFA7ZgwBYM2IIBW7C/wfbWJGO2rGfvuStnbPKRn7uy57GjT5aAXRjH/P765tRg5x09QD+QDuyyq10K3NxWcLvjxYU2XoC8a3PWx+G5/bHUFnN7i9bx+r1BETadz5GbY+ooGYjAKn7I6H3RMvQ7fm5ApWfWezRhE9IpdoHsu7Rjj0Dt+uhtGXb1VlksLdjU6Zk9wEW6t6L8is2Ma8KuO5f9N5Ln6JgpQAXrC+yyKEfHCDeuCTtXIHevdzvHV7h1zCX3zc5u1/3z+B9IStsxoilgCwZswYAtGLAFA7ZgwBbsFBtdH4uN7mpJLwwb2ctgdJ95AAAAAElFTkSuQmCC" SearchSteps="Image" TargetType="ImageBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                          <Sequence DisplayName="adicionar infos " sap:VirtualizedContainerService.HintSize="588,2877" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence DisplayName="tipo documento" sap:VirtualizedContainerService.HintSize="526,445" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click tipo documento" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable CvElementArea="348, 448, 563, 25" CvTextArea="351, 454, 51, 12" CvTextArgument="Selecione" CvType="InputBox" DesignTimeRectangle="348, 448, 563, 25" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Tipo Documento'" Guid="e93f12b7-dd37-4289-bab1-d815e66a6436" InformativeScreenshot="de2ffe96d84956f41637a305b27e8d1c.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                        <uix:Target CvTextArgument="Tipo Documento" CvType="Text" DesignTimeRectangle="348, 432, 88, 14" ElementType="Text" FriendlyName="'Tipo Documento'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                        <uix:Target CvTextArgument="Dados Gerais" CvType="Text" DesignTimeRectangle="352, 275, 108, 17" ElementType="Text" FriendlyName="'Dados Gerais'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DelayBetweenKeys="200" DisplayName="escrever desdobramento" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="SendHotkey_8" Key="[In_strTipoDocumento]" KeyModifiers="None">
+                                <ui:SendHotkey.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f1ae3abf-7ace-4f2c-aadd-24e0ff29eee2">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:SendHotkey.Target>
+                              </ui:SendHotkey>
+                            </Sequence>
+                            <If Condition="[In_strTipoDocumento.ToLower = &quot;documentos&quot;]" sap:VirtualizedContainerService.HintSize="526,1301" sap2010:WorkflowViewState.IdRef="If_5">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="492,950" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Sequence DisplayName="down enter" sap:VirtualizedContainerService.HintSize="450,862" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="SendHotkey_9" Key="down" KeyModifiers="None" SpecialKey="True">
+                                      <ui:SendHotkey.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a56da448-0c7d-4fb3-9644-90c19e64fc34" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' aaname='Projuris Web - \\Remote' /&gt;">
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                          <ui:Target.WaitForReady>
+                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                          </ui:Target.WaitForReady>
+                                        </ui:Target>
+                                      </ui:SendHotkey.Target>
+                                    </ui:SendHotkey>
+                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="SendHotkey_10" Key="down" KeyModifiers="None" SpecialKey="True">
+                                      <ui:SendHotkey.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a56da448-0c7d-4fb3-9644-90c19e64fc34" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' aaname='Projuris Web - \\Remote' /&gt;">
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                          <ui:Target.WaitForReady>
+                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                          </ui:Target.WaitForReady>
+                                        </ui:Target>
+                                      </ui:SendHotkey.Target>
+                                    </ui:SendHotkey>
+                                    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_7" />
+                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="SendHotkey_11" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                      <ui:SendHotkey.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a56da448-0c7d-4fb3-9644-90c19e64fc34" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' aaname='Projuris Web - \\Remote' /&gt;">
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                          <ui:Target.WaitForReady>
+                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                          </ui:Target.WaitForReady>
+                                        </ui:Target>
+                                      </ui:SendHotkey.Target>
+                                    </ui:SendHotkey>
+                                  </Sequence>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap:VirtualizedContainerService.HintSize="492,169" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Sequence DisplayName="down enter" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_8" />
+                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="SendHotkey_12" Key="down" KeyModifiers="None" SpecialKey="True">
+                                      <ui:SendHotkey.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a56da448-0c7d-4fb3-9644-90c19e64fc34" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' aaname='Projuris Web - \\Remote' /&gt;">
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                          <ui:Target.WaitForReady>
+                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                          </ui:Target.WaitForReady>
+                                        </ui:Target>
+                                      </ui:SendHotkey.Target>
+                                    </ui:SendHotkey>
+                                    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_9" />
+                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="SendHotkey_13" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                      <ui:SendHotkey.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a56da448-0c7d-4fb3-9644-90c19e64fc34" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' aaname='Projuris Web - \\Remote' /&gt;">
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                          <ui:Target.WaitForReady>
+                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                          </ui:Target.WaitForReady>
+                                        </ui:Target>
+                                      </ui:SendHotkey.Target>
+                                    </ui:SendHotkey>
+                                  </Sequence>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                            <Sequence DisplayName="selecionar data" sap:VirtualizedContainerService.HintSize="526,743" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click data" sap:VirtualizedContainerService.HintSize="450,157" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="1083, 448, 13, 26" DesignTimeScaleFactor="1" FriendlyName="'wfica32.exe Projuris'" Guid="028984e8-31d6-4b07-8348-6de1e017f819" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAA0AAAAaCAYAAABsONZfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACISURBVDhP3ZRLCoAwDES9Tu/aa/QILt12mSN022NEpjBCi58mggsHHh1ingUXLuqIT0opqRXfTbVWteKTSimac9YY4xTYbdLZwzsOCecIwhNBf5RICKGB3kl8E8OOZQbdL/HLYekKLAP0TkIwZNjHWZNExC9hMMP7myw0ycovpXUTtfLVf091B1C0iqKSPXhYAAAAAElFTkSuQmCC" InformativeScreenshot="57cc6dbd98dd546f2e4544c22aabed83.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CvTextArgument="Dados Gerais" CvType="Text" DesignTimeRectangle="352, 275, 108, 17" ElementType="Text" FriendlyName="'Dados Gerais'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <Sequence DisplayName="down enter" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_10" />
+                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="SendHotkey_14" Key="down" KeyModifiers="None" SpecialKey="True">
+                                  <ui:SendHotkey.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a56da448-0c7d-4fb3-9644-90c19e64fc34" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' aaname='Projuris Web - \\Remote' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:SendHotkey.Target>
+                                </ui:SendHotkey>
+                                <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_11" />
+                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="SendHotkey_15" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                  <ui:SendHotkey.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a56da448-0c7d-4fb3-9644-90c19e64fc34" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' aaname='Projuris Web - \\Remote' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:SendHotkey.Target>
+                                </ui:SendHotkey>
+                              </Sequence>
+                              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBetweenKeys="200" DisplayName="del" sap:VirtualizedContainerService.HintSize="450,137" sap2010:WorkflowViewState.IdRef="SendHotkey_16" Key="del" KeyModifiers="None" SpecialKey="True">
+                                <ui:SendHotkey.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f1ae3abf-7ace-4f2c-aadd-24e0ff29eee2">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:SendHotkey.Target>
+                              </ui:SendHotkey>
+                              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DelayBetweenKeys="200" DisplayName="escrever desdobramento" sap:VirtualizedContainerService.HintSize="450,137" sap2010:WorkflowViewState.IdRef="SendHotkey_17" Key="[In_strData]" KeyModifiers="None">
+                                <ui:SendHotkey.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f1ae3abf-7ace-4f2c-aadd-24e0ff29eee2">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:SendHotkey.Target>
+                              </ui:SendHotkey>
+                            </Sequence>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="click salvar" sap:VirtualizedContainerService.HintSize="526,157" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable CvElementArea="862, 641, 78, 25" CvTextArea="886, 647, 31, 12" CvTextArgument="Salvar" CvType="Button" DesignTimeRectangle="862, 640, 79, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Salvar'" Guid="5a47f70a-3111-4734-af9d-c4a938baa687" InformativeScreenshot="508fc886b204cc8d79805746ab6f05ba.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvTextArgument="Dados Gerais" CvType="Text" DesignTimeRectangle="351, 275, 109, 17" ElementType="Text" FriendlyName="'Dados Gerais'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                        </Sequence>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1456, 868" FilePath="C:\PROGRA~2\Citrix\ICACLI~1\wfica32.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALsSURBVDhPdVNrSFNhGH52d9Ntuc3LZub9sgoXrkLyVgrp0kj6VZYFWqZZf8QfqRCs/gRKGBSkZpluaAYrwtBurCS12hy6NIP80VbojzBLM52ap+98LrtIz+E7vLfnfd/zvt/BKjgcjlcC/KRS7MzIQGHJSRwrO43dBgMUSqXXS2K5XK/0D3g8PsrKy+F4N4Z5hgHjPQvkjI5PoMpohFQup7F/FqTwJxVudT+gBNecB1fNZhwvLUVhcTEuNjbi7eQU9T0ZcGBDRATl0CTsi8fj4ca9TiyRAFP3Q0SHRbMeMZRREgTEkX4FUCvVqGtuoZ112ezwk8l+d7H/UAFmiaPd+gw+PB9f6LIjuE2jWoGV0QqeMlE800c5MotobF2riSY5VVVNdTqQ2719cC/9gDZeK0R8coisj9FIrIxSaLyjFFa3qSXdnlDpACPmZh6Gyl8F59QX9Ljc8CXDhiY8HEPf52F+3svm4627bBUEv1rkijIO0AIEHL4ujR/UM80PtHyghlqTGW7SxbbUNCAlKwufiVLT0gKO0BfxwwzCOt/TQPKR7GqoGFRrQdwoA6hCUVRRgfHlZewtKABiE3SoudaE3Px8gC9CyPkGqE6cYdmU+AuR1x9DP0YSKIJRXFkFF0lgOEg4f2OFJCDPCtgOhAjKL0HqBIMtnQ5qvXS/C0PLDLR6PZC+KwN9ztfoHHSiY8DB6XA6pSm1rTQwtvoc0ofdMMwwyP7kgThBj8iYGNg9C2gl8XwBKZSdkwPX9CzsUzOwzXwTlo0zMlG9jSZIvNKEfZNzSGq/C/FGHaR+UjT0v8QbMrM9R47SGJpFrlBARq6oLDwGmh4P1jfTjbBOQCimoi4pCY2OQYwQ8tm2drr+NdcZciW2jyxis+UFVXOLimAkK6snxH5CtJFT2XwTIolkZUOrYP8uYhAFqmEYn0fKo35qZivZCcnydRoXyOCS8/Ko/b/gCIQISNsJ/8StVA+Ni8OmHclQaDRUXwPgJ9N5BMphoVdcAAAAAElFTkSuQmCC" InformativeScreenshot="f92e3e8b8561e2233b9eb8d703e1bc41.png" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" Title="Projuris Web - \\Remote" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="VerificaTarefa" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_DT_log_uipath" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="in_strDataHoje" Type="InArgument(x:String)" />
+    <x:Property Name="in_strCaminhoLog" Type="InArgument(x:String)" />
+    <x:Property Name="in_strHora_inicio" Type="InArgument(x:String)" />
+    <x:Property Name="io_intLinha" Type="InOutArgument(x:Int32)" />
+  </x:Members>
+  <this:VerificaTarefa.in_strDataHoje>
+    <InArgument x:TypeArguments="x:String" />
+  </this:VerificaTarefa.in_strDataHoje>
+  <this:VerificaTarefa.in_strCaminhoLog>
+    <InArgument x:TypeArguments="x:String" />
+  </this:VerificaTarefa.in_strCaminhoLog>
+  <this:VerificaTarefa.in_strHora_inicio>
+    <InArgument x:TypeArguments="x:String" />
+  </this:VerificaTarefa.in_strHora_inicio>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1132,1769</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>VerificaTarefa_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="VerificaTarefa" sap:VirtualizedContainerService.HintSize="1142,1704" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="boolExisteTarefa" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1080,1593" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="[boolExisteTarefa]">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="KUSTER" sap:VirtualizedContainerService.HintSize="1034,1429" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="7c62e516-caa7-4ea0-acf7-df2d92ad0ede" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <uix:NCheckState DisplayName="existe tarefa?" sap:VirtualizedContainerService.HintSize="1000,1138" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="7c62e516-caa7-4ea0-acf7-df2d92ad0ede" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Tarefa Existe" sap:VirtualizedContainerService.HintSize="450,921" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="strNumeroPasta" />
+                    <Variable x:TypeArguments="x:String" Name="strFase" />
+                    <Variable x:TypeArguments="x:String" Name="strSigleEvento" />
+                    <Variable x:TypeArguments="x:String" Name="strFicha" />
+                    <Variable x:TypeArguments="x:String" Name="strEventoCompleto" />
+                    <Variable x:TypeArguments="x:String" Name="strNumeroOrgaoJulgador" />
+                    <Variable x:TypeArguments="x:String" Name="strForo" />
+                    <Variable x:TypeArguments="x:String" Name="strOrgaoJulgador" />
+                    <Variable x:TypeArguments="x:String" Name="strNumeroProcesso" />
+                    <Variable x:TypeArguments="x:String" Name="strDesdobramentoProjuris" />
+                    <Variable x:TypeArguments="x:String" Name="strEventoProjuris" />
+                    <Variable x:TypeArguments="x:String" Name="descricaoAgenda" />
+                    <Variable x:TypeArguments="x:String" Name="tipoDocumento" />
+                    <Variable x:TypeArguments="x:String" Name="dataHORA" />
+                    <Variable x:TypeArguments="x:String" Name="complemento" />
+                    <Variable x:TypeArguments="x:String" Name="dataHoje" />
+                    <Variable x:TypeArguments="x:String" Name="data" />
+                    <Variable x:TypeArguments="x:String" Name="dataMais2" />
+                    <Variable x:TypeArguments="x:String" Name="dataMenos2" />
+                    <Variable x:TypeArguments="x:String" Name="dataMais10" />
+                    <Variable x:TypeArguments="x:String" Name="dataMenos10" />
+                    <Variable x:TypeArguments="x:String" Name="dataHORAMais2" />
+                    <Variable x:TypeArguments="x:String" Name="dataHoraMenos10" />
+                    <Variable x:TypeArguments="x:String" Name="dataHoraMais10" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerificaTarefa\ExtraiInfoTarefa.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="VerificaTarefa\ExtraiInfoTarefa.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_strNumeroPasta">[strNumeroPasta]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_strFicha">[strFicha]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_strNumeroOrgaoJulgador">[strNumeroOrgaoJulgador]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_strForo">[strForo]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_strOrgaoJulgador">[strOrgaoJulgador]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_strNumeroProcesso">[strNumeroProcesso]</OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerificaTarefa\TrocaFIltroTarefa.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="VerificaTarefa\TrocaFIltroTarefa.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strcaminhoLog">[in_strCaminhoLog]</InArgument>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="io_intLinha">[io_intLinha]</InOutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strHora_inicio">[in_strHora_inicio]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strDataHoje">[in_strDataHoje]</InArgument>
+                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT_log_uipath">[io_DT_log_uipath]</InOutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strNumeroPasta">[strNumeroPasta]</InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_strFase">[strFase]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_strSiglaEvento">[strSigleEvento]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_strEventoCompleto">[strEventoCompleto]</OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerificaTarefa\TrocarEvento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="VerificaTarefa\TrocarEvento.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strFase">[strFase]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strFicha">[strFicha]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strSiglaEvento">[strSigleEvento]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strcaminhoLog">[in_strCaminhoLog]</InArgument>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="io_intLinha">[io_intLinha]</InOutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strHora_inicio">[in_strHora_inicio]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strNumeroPasta">[strNumeroPasta]</InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_strDesdobramentoProjuris">[strDesdobramentoProjuris]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_strEventoProjuris">[strEventoProjuris]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_descriçãoAgenda">[descricaoAgenda]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_tipoDocumento">[tipoDocumento]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_dataHORA">[dataHORA]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_complemento">[complemento]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_dataHoje">[dataHoje]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_data">[data]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_dataMais2">[dataMais2]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_dataMenos2">[dataMenos2]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_dataMais10">[dataMais10]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_dataMenos10">[dataMenos10]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_dataHORAMais2">[dataHORAMais2]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_dataHoraMenos10">[dataHoraMenos10]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_dataHoraMais10">[dataHoraMais10]</OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strEventoCompleto">[strEventoCompleto]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="388,194" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="Greg_Queue">
+                    <ui:AddQueueItem.ItemInformation>
+                      <InArgument x:TypeArguments="x:String" x:Key="strOrgaoJulgador">[strOrgaoJulgador]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strForo">[strForo]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strNumeroOrgaoJulgador">[strNumeroOrgaoJulgador]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strNumeroProcesso">[strNumeroProcesso]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strDesdobramentoProjuris">[strDesdobramentoProjuris]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strEventoCompleto">[strEventoCompleto]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="descricaoAgenda">[descricaoAgenda]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strSigleEvento">[strSigleEvento]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strEventoProjuris">[strEventoProjuris]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="tipoDocumento">[tipoDocumento]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="complemento">[complemento]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="dataHoje">[dataHoje]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="data">[data]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="dataMais2">[dataMais2]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="dataMenos2">[dataMenos2]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="dataMais10">[dataMais10]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="dataMenos10">[dataMenos10]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="dataHORA">[dataHORA]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="dataHORAMais2">[dataHORAMais2]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="dataHoraMais10">[dataHoraMais10]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="dataHoraMenos10">[dataHoraMenos10]</InArgument>
+                    </ui:AddQueueItem.ItemInformation>
+                  </ui:AddQueueItem>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AlteraStatusCPJ.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="VerificaTarefa\AlteraStatusCPJ.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="tarefa n existe" sap:VirtualizedContainerService.HintSize="496,380" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Tarefa não existe&quot;]" />
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[boolExisteTarefa]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="119, 163, 20, 12" DesignTimeScaleFactor="1" FriendlyName="'cpj3cclient.exe Preâmbu…'" Guid="f04a823a-5b69-466e-a5a9-9305c80ee17d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADCSURBVDhPrVOxDYQwDPRKCIlRaKgYg46SGWhpWYCenjILMAEL+BM7jh8/0aN/ipMcX+5yCQbcfqCbWgSosFt9HdZ/gAzHBrxhiyM1Z6whrBVFv6mIDleunsQs6ty+YVf6opmVSHXkJP06YBFE5YCL5aIOZJOedAanZ37pK6olsV0HADflugaSKKa4ZUix6Qo5M+VvGYaHfG8QTg+v6b8ass6My0WyD+7qoyRdTmQh+3Jjk3RpRJ4B5MblV/Cv9xgOfAFkMa3wDs0WtQAAAABJRU5ErkJggg==" InformativeScreenshot="049e748097148bb5a0aa60c668d7141b.png" ScopeSelectorArgument="&lt;wnd app='cpj3cclient.exe' cls='TFormIni' title='Preâmbulo CPJ-3C Client - Versão H.03.065.009' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="69, 162, 8, 81" ElementType="Text" FriendlyName="'TStaticText'" FullSelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TTabSheet' title='Tarefas' /&gt;&lt;wnd cls='TPage' title='Grid' /&gt;&lt;wnd cls='TStaticText' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TTabSheet' title='Tarefas' /&gt;&lt;wnd cls='TPage' title='Grid' /&gt;&lt;wnd cls='TStaticText' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAAwAAABVCAYAAAB99AXYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABHSURBVFhH7cuxCUAhEATR7b+K7eo3YAU2cB8MzFbOUJiBCZ/qsgW+MdtvIOk4ABAGAMIAQBgACAMAYQAgDACEXwDdZbv6u34RK+/mrdLZ9AAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1382, 744" FilePath="C:\temp\antigos\cpjwcs\cpj3cclient.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABNSURBVDhPY6ApOHDgwH8QhnJJAw0NDSCNYAxlEw9gmkE0MhssSQhg00C0IfgUEmMIQQUwQ6AYBeCUwALwqiXWAJxg1ACIJDF40AAGBgBUp1RJwDNLngAAAABJRU5ErkJggg==" InformativeScreenshot="b39fab2e3da461335181e76d7812dbdc.png" IsExactTitleEnabled="True" Selector="&lt;wnd app='cpj3cclient.exe' cls='TFormIni' title='Preâmbulo CPJ-3C Client - Versão H.03.065.009' /&gt;" Title="Preâmbulo CPJ-3C Client - Versão H.03.065.009" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+    </DoWhile>
+  </Sequence>
+</Activity>

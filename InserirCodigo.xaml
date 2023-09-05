@@ -1,0 +1,346 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="InserirCodigo" this:InserirCodigo.in_strCodigoCrefisa="369034" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strCodigoCrefisa" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>536,2941</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>InserirCodigo_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="InserirCodigo" sap:VirtualizedContainerService.HintSize="546,2876" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'cpj3cclient.exe Preâmbu...'" sap:VirtualizedContainerService.HintSize="484,986" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="1b9be30f0b5ec1ce56692f185ab7ef07" Selector="&lt;wnd app='cpj3cclient.exe' cls='TFormIni' title='Preâmbulo CPJ-3C Client - Versão H.03.065.009' /&gt;">
+      <ui:WindowScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,799" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strCodigoInserido" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TComboBox'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2b9012bc-a731-4a0e-9660-1636375bc318" InformativeScreenshot="a0d9484dab3e8d3f9561f3bfa55e6450" Selector="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TTabSheet' title='Tarefas' /&gt;&lt;wnd cls='TPage' title='Grid' /&gt;&lt;wnd cls='TComboBox' idx='5' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'list item'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="223c7e60-6a0c-41bf-a63b-9d1f43fddf9d" InformativeScreenshot="a534a49b3dff65527c8ac57245f23a74" Selector="&lt;wnd app='cpj3cclient.exe' cls='ComboLBox' idx='*' /&gt;&lt;ctrl name='Solicitadas a outros' role='list item' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'TEdit'" sap:VirtualizedContainerService.HintSize="388,155" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[in_strCodigoCrefisa]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fb75b1fe-2211-400c-989a-57fb45f92df8" InformativeScreenshot="1413b29bd1759efa24669577ea062054" Selector="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TTabSheet' title='Tarefas' /&gt;&lt;wnd cls='TPage' title='Grid' /&gt;&lt;wnd cls='TPage' title='PessoaEquipe' /&gt;&lt;wnd cls='TEdit' idx='2' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TEdit'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="GetValue_1">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ddf38f40-93b8-4393-8b15-a03db4834794" InformativeScreenshot="a98282eabc9be370bac59324dc47fb53" Selector="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TTabSheet' title='Tarefas' /&gt;&lt;wnd cls='TPage' title='Grid' /&gt;&lt;wnd cls='TPage' title='PessoaEquipe' /&gt;&lt;wnd cls='TEdit' idx='2' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[strCodigoInserido]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <If Condition="[strCodigoInserido =&quot;&quot;]" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[New SystemException(&quot;Erro ao inserir Codigo Crefisa&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:WindowScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:WindowScope>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="KUSTER" sap:VirtualizedContainerService.HintSize="484,1739" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="7c62e516-caa7-4ea0-acf7-df2d92ad0ede" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="inserir código crefisa" sap:VirtualizedContainerService.HintSize="450,1448" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="bConfirma" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Digitado codigo= &quot;  &amp; in_strcodigoCrefisa]" />
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="388,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
+            <uix:NSelectItem DisplayName="Select Item 'TPanel'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="Não iniciadas" ScopeIdentifier="7c62e516-caa7-4ea0-acf7-df2d92ad0ede" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="4">
+                  <x:String>Todas</x:String>
+                  <x:String>Não iniciadas</x:String>
+                  <x:String>Em andamento</x:String>
+                  <x:String>Ag. retorno</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="198, 112, 98, 21" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'Todas'" FullSelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TTabSheet' title='Tarefas' /&gt;&lt;wnd cls='TPage' title='Grid' /&gt;&lt;wnd cls='TComboBox' /&gt;&lt;ctrl role='combo box' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TTabSheet' title='Tarefas' /&gt;&lt;wnd cls='TPage' title='Grid' /&gt;&lt;wnd cls='TComboBox' /&gt;&lt;ctrl role='combo box' automationid='' /&gt;" Guid="c9b12903-c0ea-4633-bd62-e835da3e796b" InformativeScreenshot="ea0a865da0fb86e85b68d23ee484e715.png" ScopeSelectorArgument="&lt;wnd app='cpj3cclient.exe' cls='TFormIni' title='Preâmbulo CPJ-3C Client - Versão H.03.065.009' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="8, 31, 1366, 50" FriendlyName="'TPanel'" FullSelectorArgument="&lt;wnd cls='TPanel' idx='42' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TPanel' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NSelectItem DisplayName="Select Item '-5'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="-30" ScopeIdentifier="7c62e516-caa7-4ea0-acf7-df2d92ad0ede" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="5">
+                  <x:String>0</x:String>
+                  <x:String>-5</x:String>
+                  <x:String>-7</x:String>
+                  <x:String>-15</x:String>
+                  <x:String>-30</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="296, 112, 44, 21" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'-5'" FullSelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TTabSheet' title='Tarefas' /&gt;&lt;wnd cls='TPage' title='Grid' /&gt;&lt;wnd cls='TComboBox' idx='3' /&gt;&lt;ctrl role='combo box' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TTabSheet' title='Tarefas' /&gt;&lt;wnd cls='TPage' title='Grid' /&gt;&lt;wnd cls='TComboBox' /&gt;&lt;ctrl role='combo box' automationid='' /&gt;" Guid="2e3fd9df-7c06-4253-a5ce-d045476b4030" InformativeScreenshot="3a09d87ffd116d5bdc5e1a963e773f15.png" ScopeSelectorArgument="&lt;wnd app='cpj3cclient.exe' cls='TFormIni' title='Preâmbulo CPJ-3C Client - Versão H.03.065.009' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="63, 88, 48, 18" ElementType="TabPage" FriendlyName="'Tarefas'" FullSelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TPageControl' /&gt;&lt;ctrl name='Tarefas' role='page tab' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TPageControl' /&gt;&lt;ctrl name='Tarefas' role='page tab' automationid='' check:text='Tarefas' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAWCAYAAACPHL/WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC3SURBVFhH7ZHBDoQgDET5//+EE3fSExtMxtRuu8uuNYLB5GmYPtEJoRpXjHEqUko151wPhYhoWkopW6m9kCbNRjuprZA2nJFnFmo3bcgJIbyhef/guVd3IeD58Yb3fquQ9QMtBzI762iexSUnBIe78j3NkfTsI7nkhOBwV84xw9PyeM49C5dCMsO654c+Od/WGrcV8nIkLoWQc5BZDs8sR3p8bfFzodFZhUZnFRqdVWh0HleIiOoLV8JrZMNcjccAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NSelectItem DisplayName="Select Item 'TPanel'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="0" ScopeIdentifier="7c62e516-caa7-4ea0-acf7-df2d92ad0ede" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="5">
+                  <x:String>0</x:String>
+                  <x:String>+5</x:String>
+                  <x:String>+7</x:String>
+                  <x:String>+15</x:String>
+                  <x:String>+30</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="410, 112, 53, 21" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'+5'" FullSelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TTabSheet' title='Tarefas' /&gt;&lt;wnd cls='TPage' title='Grid' /&gt;&lt;wnd cls='TComboBox' idx='2' /&gt;&lt;ctrl role='combo box' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TTabSheet' title='Tarefas' /&gt;&lt;wnd cls='TPage' title='Grid' /&gt;&lt;wnd cls='TComboBox' /&gt;&lt;ctrl role='combo box' automationid='' /&gt;" Guid="31bd3c41-eecb-48fa-9f00-82530de6f5ea" InformativeScreenshot="77f0bc731a20751098ec93b50c03b370.png" ScopeSelectorArgument="&lt;wnd app='cpj3cclient.exe' cls='TFormIni' title='Preâmbulo CPJ-3C Client - Versão H.03.065.009' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="3">
+                      <uix:Target DesignTimeRectangle="8, 31, 1440, 50" FriendlyName="'TPanel'" FullSelectorArgument="&lt;wnd cls='TPanel' idx='42' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TPanel' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                      <uix:Target DesignTimeRectangle="63, 88, 48, 18" ElementType="TabPage" FriendlyName="'Tarefas'" FullSelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TPageControl' /&gt;&lt;ctrl name='Tarefas' role='page tab' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TPageControl' /&gt;&lt;ctrl name='Tarefas' role='page tab' automationid='' check:text='Tarefas' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAWCAYAAACPHL/WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC3SURBVFhH7ZHBDoQgDET5//+EE3fSExtMxtRuu8uuNYLB5GmYPtEJoRpXjHEqUko151wPhYhoWkopW6m9kCbNRjuprZA2nJFnFmo3bcgJIbyhef/guVd3IeD58Yb3fquQ9QMtBzI762iexSUnBIe78j3NkfTsI7nkhOBwV84xw9PyeM49C5dCMsO654c+Od/WGrcV8nIkLoWQc5BZDs8sR3p8bfFzodFZhUZnFRqdVWh0HleIiOoLV8JrZMNcjccAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                      <uix:Target DesignTimeRectangle="324, 113, 15, 19" ElementType="Button" FriendlyName="'Abrir'" FullSelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TTabSheet' title='Tarefas' /&gt;&lt;wnd cls='TPage' title='Grid' /&gt;&lt;wnd cls='TComboBox' idx='3' /&gt;&lt;ctrl automationid='DropDown' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TFormAge' title='Tarefas, agendas e notificações' /&gt;&lt;wnd cls='TTabSheet' title='Tarefas' /&gt;&lt;wnd cls='TPage' title='Grid' /&gt;&lt;wnd cls='TComboBox' /&gt;&lt;ctrl automationid='DropDown' role='push button' check:text='Abrir' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABMAAAAXCAYAAADpwXTaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACgSURBVDhP7ZW7CgMhEEX3i/1CK2srsbW1FsFHIxNugkRJYlyUrbY4FneGgw/UwzlHuziUUrSC1pqstS9ZKYVWCCE8hVtkADO8Zee4RpZzJmNMl7Wghp42+ylLKRFjjKSUXQ6QoRZj7PLhMr33H8IqQq3tBX/3rBWORGDqAKpwJAJTMoC7B77VKtOyGW7ZebbJupeWc04rCCHefwCGPTh6AM8Ih8o5BoshAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Selecionado d - 30&quot;]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'TPanel'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7c62e516-caa7-4ea0-acf7-df2d92ad0ede" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1345, 113, 18, 20" DesignTimeScaleFactor="1" FriendlyName="'cpj3cclient.exe Preâmbu…'" Guid="dcc035db-622d-43f5-aa30-78fe71b7121e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACZSURBVDhPY/jw4cN/amAaGfTx0/8JUxZiYJA4ijosGGEQ1JA9p35j4Kq6XoKGwQ3CZQgMxyWXYGhGxtQ3COR8bAbA8BA26PPnLzgNAxkyrTMWQzMyhhsEwiDDQJrQ8dcNlv8fnuvBaxiKQTAMMhCEYXxiDMNqEDbMwMCA1zCiDQJhmGEgF2LIoQsQwiDDqGIQLjxqECH84T8ARIQVJXP4UHQAAAAASUVORK5CYII=" InformativeScreenshot="e6b7370d556061745053a9c06e46470f.png" ScopeSelectorArgument="&lt;wnd app='cpj3cclient.exe' cls='TFormIni' title='Preâmbulo CPJ-3C Client - Versão H.03.065.009' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="8, 31, 1366, 50" FriendlyName="'TPanel'" FullSelectorArgument="&lt;wnd cls='TPanel' idx='34' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TPanel' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 744" FilePath="C:\temp\antigos\cpjwcs\cpj3cclient.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABNSURBVDhPY6ApOHDgwH8QhnJJAw0NDSCNYAxlEw9gmkE0MhssSQhg00C0IfgUEmMIQQUwQ6AYBeCUwALwqiXWAJxg1ACIJDF40AAGBgBUp1RJwDNLngAAAABJRU5ErkJggg==" InformativeScreenshot="b39fab2e3da461335181e76d7812dbdc.png" Selector="&lt;wnd app='cpj3cclient.exe' cls='TFormIni' title='Preâmbulo CPJ-3C Client - Versão H.03.065.009' /&gt;" Title="Preâmbulo CPJ-3C Client - Versão H.03.065.009" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

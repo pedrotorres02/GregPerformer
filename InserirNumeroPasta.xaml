@@ -1,0 +1,162 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="InserirNumeroPasta" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strNumeroPasta" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1018,1324</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>InserirNumeroPasta_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="InserirNumeroPasta" sap:VirtualizedContainerService.HintSize="546,1259" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Projuris Web - \\Remote" sap:VirtualizedContainerService.HintSize="484,1148" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="inserir número pasta" sap:VirtualizedContainerService.HintSize="450,857" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'wfica32.exe Projuris'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1090, 255, 139, 50" DesignTimeScaleFactor="1" FriendlyName="'wfica32.exe Projuris'" Guid="09e5e1d9-2bee-48b7-953a-4215371c7ecc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAyCAYAAABs3ChCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACm0SURBVHhe7Vx3nFXltb2isT67xiS+50ueQRNbjBpb7FhQxI4goohKFxUQ6V1BmkrvvcMw9Dr0YYYZpsD0Xm7vvbdZb+2Dx9/NvEHIS96Lf3D5Le4p3/naXt/ae59zz2hCoRDO4zzOBefJch7njPNkOY9zxnmynMc54zxZzuOccZ4s53HO0DgDTvjjLkTgJwIIwQdPkxt2jw3ugAuBqB/hREhBJBlGDFHE+X9THAh4gWAggUg4CKfNCI/DjqZwE+J+AHE3/4sglIjB5PXDHmlCmEcCiSY0GvTweo1o4r5WF0aEdRntZpZ2I9EUhd8Th9Go59kk4vEofAE/ApEo+xNmfxJw+UOwwwPoHMiKWcAuIdBoRyOvwMlauGOOFgebCp/Ph2g0yn544fGwLn7UffnEkpbT5TgMjysOj9eOQNgkZ2AxeXkuopRzuRwIBD0wmrTcSyrXRyKxv2mrJcgnGAwqbcu3fCoqKpRvt9vd4jX/amj8kQA8YQ+cAQdsATucYTc8MR8JQXsT0WQTgtEY3P4AbC43zHYHTDY7aur1qK6vIxl8NLpfgdtj4eBdCAVj8DudiJEFMVbi8IZhtrnh99EoTZyopBfhoFXmFm4HD/Hb6bPDFTQiGPYhFuOxpgTCJKHZbITL40Y0HkM4TmImknD5/PDSaAjEUYeE2A9+nQ1iShg85M7ZjRWTRvgJh8Ow2Wxwsr9WqxUOBzvEj9VRRUIFEJXucgyRqJfdlQUQQ8CXhMFgUq7zeuVYHPFEmOU9sNvtJHiyxTZTIQSJRCIsG1f6IB+j0ah86/X6Fq/5V0MTphG8wRCsTg+J4CIpqCCcf5eTauEIKN9uF1eYN/qDinC6uJK5/gkvbVONgqpMaB01ipF4CtVaM8or/CgsdqKw1IWKOj+0eg8sOgP8xlo02WtZKoYIF1ROZjUSXKSBoBO+kBHeEMnC9oVJVqv5B2OcVhghj9/vVQhkjHGyjXYUOBsRdXtgqKyGkcoIWxB6KlxLg02FGFUMJkogBlM/fr9fIU0wbEWCKhiXvvnj7H85DOZS1NZVoqpCjJpU+iMKJddInWJ8OR4I+P5He80h7aqEle1AIPAjUXU6XYvX/KuhEdWQMQq5OXbE+J2UMXC1K6DhmsieRCiGWCCCiI8XegIw+ep/cF10NSwknievyoCRkxfjyfY98cGXW/DSR4vwZOfpeKHbDLzbfx7Gf7ce2SfKWaHiOZBxoBgD+k1B7tFiuh4zj7gVt+elzYPhEBwu5+lONMVgsxrZL3awiZ0lxFlQZFDnMNKg3KOLjEpZ2t3qjrc42FSIgROJhKIoWq32R3cgxpfjXj/dEBXS4xKFi9JV2tjiD/3hnBhNjfD6nLyG7UaSaKDSnv7E4XSddmE/BWlDvsX1SZupqib7zcv/HKARJWF/lQkQRNw+2HQN8Nlr4LZUwmkqh9dWjYhXi2TIpCAeMMAT9MLPC23eOGoNUWzaVYaufafj/b5zsX63AV8uMWH4Wg/Gbk1iEL/bjTqM+7ouwMv9V2PYohPYnGvDp6M34JHH+2Dr5izGP2IM+uqInwpD4tLl+INkDY2j19VDV0d/nmRM5dDBXFeCIl3gtOnoJ5oU6njRUFYKvSdCkqHFwaZC4oLUj6iCGMvl4sX8hOgOg4EYrOaAoiDRhJDZgePHj6O63A2rvZ77XGhhThr5U5BXTgX2K0ShFrXYZirkI31Q1UXaFZIIYZPJs7uxfwU0dpIjJDbhikz6fTDWFuBU9iYsmPUx5k7vhvkzP8KKRZ8gfd0Q7EgfhW1pI5TtgJtawkmqr/Xiy8Fz8MJLA3HvIx/jjw90Q5vXRuCJ92bhkQ8W4ukBu/Hmt7XotMCFtlO1uOvzLNz83lY8M2w3/txlGe5vOxGHssycJD/djxl+xk7CWwliHR4hQRIWI0PXBNuLODBxcB90eO5B9Bo0G/kMdkEXag/WorT2GL7o/B6+nL8UdXVnJ4soixBEVEUCSzkmHzWGEYMlWb2Dbi0U9kJnKmBgnod27drjrVf74Q93/gaPPPoA3nyjE0qKGpS5EMWsqi5lvFPzP9prDiGJqFpTk4T5p12PuEM5JudauuZfDY3LF0TQxwCN3z5rNRrLt6Moaza7v4vYSSNtRDy0GiHvMtiMs1BRPJZxxgBY6ks5syEsnbsCf324PUaNmkf5p+14lXDP44lhx6ESdB+7Dg9+vAwPDsxEm6k2PDbZjduH6HHlh/tx0zu7cVeH1dhfEFXIEY4ypvFbZc6ZjfmVgFqsEHBLMOyHsSwHD7e+AfffcgXufKgrMiSNoqtwNzXA6CtFpz89hLbDxjKQPjtZ5FNTU4MJEyagT58+SEtLU1yRuAeJH2w2B4J+ahaVirXRPdYwltPi9dc6oG+PCTzmZlx2Ep9/NgjPPfMmyksMjG2idI0yA2fPZkRFpB1BYWEhVq5cqaiK9KGl8j8HaPxhsthPuJiMcvVY6zZBVzGfscv3DEC/Vb6B+cTK02iaS3JNwbIZQ7Bs5jh8M3Iw1WaLsqokTCxprIA9Qd9rL1KUoEHvxsSVeXik7xbc0jUDv+1XgdsHW3D9UCOu+bAQN720Giv3uWB0SFblRDRsRyRE8rIuf5gRUST0gwvy4+ShLejU5l7sXzMd19zcFitpUFTrYAqXMHIyoMdDT+OxwSPBWLjFwaZCTZGFHGazWTGafCSGUAJfD90BO+H3iZsIwGg7AU+gCu1eehXDvpjDYLeYx0OoqmzEHbc/ilMFjaiukvQ5BKfn7Moi7Yt6SeYzdepUdOnSBSaTSTkn6ta8/M8Bmjh9fSDmoAtwYcWyYTRKGpriE4hPic/RlBiIZNOXSDQNpoceRiOO5Pdo5GaMwsYlvZGxaQIaSvdAW5WNqpJM1FQe5wRmw5MDVGYUwdmwBeWVa9BnzDTc23U3bv2MjX4YwAVda3BtlyP4r7emI+1oNexuxgpMq+N+pvFmpvCOBKpQDZygm6kXx7QJ28e/i9u6jVeUq/stGnw4XYsyeoAmOZKYgrk33YBfTK3HVw9dgcfuux+PPXAx+q1YdPr+S24SIz7ToMfYpRg9sj9u/tOjOGkII3PbLNx3x7vY52b21zAL0554D0NnrUXrv7ZFj/ffhZ7qGSIHqoMmuod9GH79v+P16YfgNh0QXmDzjmX4030dsHHrERg9e/AUt5976B60vrMrHrz5t0pcpbTv2IWMtGm48aE3cVvrv+Av9/WEyTgDkz75FI/e80vc8J+tccfLT2DqYjcsKMF7zz6OG1o/gjcevQfP3Ho19pmAk1KZvxEUPMWFpkIIJt9CdnFjqa5MzqWeV8ukEqElqPVIeblWEyFJfBEbXYAdyxYNRlN0NVPZkYzd+ioQ0iQTn1NeB5EogxFvGqqQBrGF0FeNg6Hme6rSJhp4IxrrV3KlrGWauQol1ZNRbRjPlHoq1u/9Bi/3GoPfdVyOX/U7CM0nm/DrTwy48vVtuPbxYVi5+xQsVieSEWYiYcYmnAyrPYIy/oPEvRSBBDaj/4u34cHeE6DlpBXPHIDWbafCyHNykzASnIrFt90FzavLgbKdHJMLm6Z+hOv+dDfG7GEQw2sOLL0df237BbqPGKC4ywoGr9mbp6H9swMxN78ULsMiTHm2B1rd9gRqPXH4HabTWRdjWyb1cHk2Y+Lv7kLrnnPZRweD/3p0eO1T/PXJdtBZqXBmHVYunqakenoat2fb59D5k3E4SbfYsH8Wer75MGZsPoIwF4SOnpU6DF9dLRbP6YVO7w1DRnkB6tjPes8JFO5MR4UlgZiuHGsmDsSjPaYgX+YiboGVWalKgFQ0J4MopGp49XxqmVRitAS1vFwr+5pQlGQJ2lixFUvmD0QiuJjxS38u8o8Yk/RAU7gXCdQHiXg/xOKfIZYcoACYzPPDWX4s1WgGQr6J8LrHMUibRN/+FefrGxpxJQqq0/DpoKV46Nnd+GO7EtzSJQ839NyOmzsfwbVt5uG3Tw3F4ULGKZKRkihOiwGxUBAxEuZksJCsSSJiD6KychHefuxWLDhcBs49Dk7qjfuf/hRL0rWwyY0fKs/ul9/HFZNKEK8rhkeSeUs22rZ5EW0XbIONCpQ+5CrcfesHQkFGQglYnH40ZC5C+6c/w4oaA5y2tRjxRE90mbwRdglYkyEUG/WI0/AuEtLl2YoVT7yEmzp/i1t//Rs88+yN6NN1JfKL8lgbXaJ0AydhraYr80dwZNFkPPx8N5y083BdLl646yY8+mZHhJyFsLB+o5WZk8+NMWPvR6eOMxViyu25cFzHRaLHKW0QcX0F6g9txA1PdUd6vkEhi9bh+RuSqMaUb9XAAiHLTxFGPX4mpNYt0IRjTIEDLkRJmGVzP2XnZyHh7o4m/7t01V3QFHifc/YBkuGPEIv0RDzSG7Fob3a6DwLOrkgGeU1yBNNpEij6BYc6ghiIMvN7OFHaH/37t8edv3uWUj8at931LVrd3A8X3dEbmv/ojkv/0B2tH/4Qew5yVdNwiUgY8fDp1MzNWMro56TJXcBEADOn9cMVrTR45u2uuP62B9C29SXo0PYdfL+mkoYESs2z0fuy1nhwZT2JDRwy5lM69uP5P9yH++avU5QkmNYev7/sbayIcBKdOro6G3LWjsBvr38SGVIAOWh34/No/9UmVJpZa8QDPVVAGmCOgjrtKsy490nc9P4MKkuMqXapZPPKx0P3YDa4sXPXHDx09/O48/fX4c07rsJ/3PYcjtCbwudEwZYluOmO36PrG7fg+R7DYRC3koyg+ye/wOP3T4LB78Lxos086IYh7xgea98Nf731Jjx323W4+L6O2FFMaSFZjJ6zp+YCNYA+E2FSy7YElSwqNNFEkEkNg8ugC6vn9KPkU0adJIr7dTR5Xuf+m0h4OzJz7UxCvIcYyRMPdkXc8yFiTlEfEsQ3CI7q94nO8Go7Q1/6AonTk4MeCn3JO6g90Zn+fSZMdd/i0N6voW88BCdXlsxzoynE9JHV+CJUFHaKebzcpVXyFRpdZz4Frz4HnV9uh94DqHjUhAoXJ8tSgI8euxt/7fANCh28DllY0uZj3DtmNZyszywX5+/Eh8++gvY7DzO2iaB82j340/U9sVvqTrrhtplhOjYXT/ypM9Zq5YbYCfR+oBce+Gyh0jfQlQmHmigAWpZ3Bvdi9kMv4KkpR+Fluu6k4gT9ZnjMDIIZrKZtHocnH30d+XmnuG/Dws/ewBMv9mbozU9NFefEgjqXCd8Ob4MLb38Sxwq98NjNGDLqN+jfK4NBehzBeAVKc3fj3puuwdItx3iNEyWMi/7w1lCsP055DOrgCLPcD6rxU5DbAwKVMIJUEjQnR3OopFKVSBOj1EZoJFBd1s6iYriYFtpeYUDW9jSc7ZB0tUfC8xri3jcQ875FN9WRE0kyhBjX+JhGF3fGoTX3Yfei27F30e+xeuIV2DiyNTLnPIIdU2/GztkXIW/b1UiffQl2zHmK+nsEjXUHOYMmWHSldHN+WPVG5VmSfOSO6amGSgZz9PWxAvhNe/Hifa9i6PSFJJAdNcySElzrh0a9hdZPD0SOJYwyxyp00fwGD3fvi+X7i1BkNGHfgC50Qy9hdLEBtsY4sr+/DU/ePxoHmQ2b6kuoWHGFLA/c/iaWVhngcG1Gnwe6452ZGfBEYggbK+DmYvLVSsziVwg59c9tcMfQbWzfxCBXequF39gEl96KaTNexaP3deM5Tl1dJRay/Ytu+gs4EjgKM1G4d53iavyNu3DHS59jSdpmlOUXYPGyN/HYgwNwKP8oF0Mcu7Z8j087vIITNW5kbVqOmV98gEvu7wQlzndWw00frapGqnrIt0oQgaTnZyLM34MflSUcDSDiJ1m8JMv3H5ModCOmZxkrPM1tQRskHc8j4XwJCZIm7n5VASLvkCidEdZ2RP6W+7B0zBVY99V12Dvrd0ifeB12jr0bx2a0x5YxT2Dxl7/G0rGXYdbQS7FpUnsEcg5AVzQWMfs6aEvXcgYsVBYHU94EfN4wDEYbVzZXKxd7bnAX8g6Nx8dth+Ob9COcrFIl5i2wMPLYPgC/fKAHZm3PwvGamVjxaAdMmj0W97zwLlq3fhxfvvEY9pRypbI8apuwZPTlePLFiSgxxpGIMpimumUsHIBH734Xe31xWC1r8flfuuHF4cuYIbJ9Zok6pxESQhhJlXpzOuY/9Rb+a8BmeBnr5WSVI+ig+SW7TnrRUHMQ77/XHdfd+Af8+dYHMOGDjrjjuQ+wizFLydF1ePHx23HNbfej3YOtMW5uIWrtR5Vr3bbDuPnfH8ZfXngI23bUQG/egYduuQmPv/IhOj31AKZ80gl/7DAM+6t9qMvZCQvtlUoUFSpBBJKaq9v/W8JIHWo9cr1GnvIG6QOTLjtWT+tGogxCQvsodfxxEuYJ2vEpJO1tkLA/h7jjBcRdLyHufJlxzROI256Bo+IJHFlzM1aOvRBZS1rDnf0avMdfhSlPg0j1Y3Cc7IyGnLdgb3iVq/sl1Ba8jca8YdDlvYvqrF7YvKwrzLX7YdVVwu8NUO4o+3QjjUxVo4eDOIVDJPIWxLi65fEj/BUoYJZillumTHWrOdll9BmNHpLuBDOS2j2opSKFmcFEnRVKMJshtz+URzeTcUgeTdG3KO6sXgLGUgToZrJ5NuBNo7tgNVSeeh0vituQW5qPpBGwy81BHAeyasCkGUaHPGZgpYxnXNoiNlaOMEkRTJYiKgIpfsxiQQ23s7ipq9whB1Au9xndHjipEm7soWeScN0GK8duYSu5DLXEHSLiVZRF3BACjUrqXCukZMwiVasESCWCfKtESSWLauxUspwLYeTxh9xRFsijCY030sS01Q6/vRSbZr7NSR3Nvr7MROI2uPPvheHonTAcuR/+ohfhPtkWlpynEax8DcH6NnCWPIPcda2xbmwrHJt9LaIn7gOKfg/dVg0ShzWIH9IgekCD8D4Ngns08O/SwLtdA882nluhQdOeX2HbpBthKV8FF1doULwhMyFvoOJH6VN9pgxUOiwDF/+ZOgnNJ0IGqg7yTGi+atTr5VppV+6k/hSkLwLZbl6PQLblmJxTr2mp3JmgXnOukHrl+ZL6jEk1uIxVjC5tSvvyKEPKy2OGlvosZaQOuU6OqfvylF4TIPOdLg9CrgqsnfYaoif7onHDXdg57XIcmfcr7J1xPbZPuRp7p9+EtAlXYPlwDTZNvByrRl2LtPG/xoaRv0T6iCtRuvQ/GFDeQ739JVwkR+zgaaJEMjQI7f1borhJpugqDRzrr8HOb1vDo90Fu40TT0UIMfvxeqsUg0lnZUAyOHUAsi1GVSe++YBVwqjGPBNSr029XoVqhDNBrUe2WyKB9F+MJX1Rj6WSUW33TGje3tmgGlUg22pbQhSBbMu9F+mH1C8LUJ50C3nUB6hST/Nx/A1ZgpRDj9ePqLcayye+BN2et7B/wqWY2FGDFQMZqI64BhtG/Bu2fnUl1g+/ACsGabh9CbYOux17xtyJzG/uQuncu+DY+kfq7b9Tz0kMEkRI8qOi7DxNFCGJM/00Aus0ODX7Mhxa+AITk2JYbS5YncyIYhG4HTXKQzUZkDpxMgiVCOogVCM1H6CUSZ3IlqCWlesEaj0Cqbela1pCS/0QqGRJbUO2/6/JoqqmShY5JmSQffVGnXpM5liOpS5MdTwC6Ydar5TX+BgjuNxexHw1WDbhRVRtboeNJMTOMb9FQ1obhDJfQSyXWVHJ83QxjGEKGc80cD/zWZLhrwjuuh+Jffcguf+3iO29BBGqSBNVRUgSoJr4dpxWE9dmKskmDWwbiQ2CVtg34SoUbB6o+GWTzQk9mZ6Ic4Dmhh8Hq06cfKvuSDqeOkmphpLz6sB/ClK/WladFKkvVTF+CuqEqmhef2p9MtmC5kr0U0ht61yhuhzZVudAttV25VsUwsJYSiDPptRf6kl5tc8CtY/qdVK3xhWMw2Z3Ksqy4pt2qN32CjYN1mDj4AtQuZoB64E74Mq4AZ6Dl8G5WwML1SG0/0IS52IqiQbJIxcARy8FDlyCINUjzjLIvJgkueC0mmw5rST2jRfAuv4CmNdoYFqtQd36S7Ft4u+gzV7HYA4wOFzQ2xuVHzK59WZlMGqnZYAyCdJ56bT8rEAGkDr56uDE8ALZ/imkEkX25Xq1TjGsOmlnQvP61D6oUMtJXdJnQWq9zcs3h1ruXCH9ljkSyLaMS9yMui1ty5yqx2Ts4oIE6vzKcRmLnJOFqvZDjgt+JEvYXakoi5Bl81ANsqZfAv/h20mKW5HMvQhgdoPjJAeDVnE1XiqIIMy4BJlUEwa0YRIluKMVorsvI0kuoJq0giOtlaIilrUXkCQXwLDyAugZ3BasuhwZc9sgrKuDhymykR0ze+oQ9lvg051eARLIikzKRMsg1YGoE68OQgakTrJqvNSJbAnNDaweT63zp9CclM3raU5EgWzLMTmXWtc/AzIfMmcC2Za2DAaDsi1typjUBSdEEEg/VAVX9+W8lG0+vwIlwBU3JAHuvFFPo2htG6z+TINDk6kGu36F6NEr4SYJonQtOEIwDgEJIkFrgsRJHD19LrSfROE5D92Oha5GSCJqohLFuKoV9MtbQbfsQmiXtsLhJZchN62Xoiq1zIlNgSDskVp4nTqEtSGlc/KRnxDIY/zKykplZQiBRDplMM0HlGoU9fi5QJ2M1DpSj7UEmdjmhJDjap3qudS6ZPv/iizNIYtL5kogpKmrq1NURNpuPuaWoM5D6rg08uzLH2DU7izH9MGPInvRw5j3oQbVK34N5N4LFNyCIINViKKQGApZ9rYCDv4X929FbP/1sDEWsdDV+FjOT9KYGaPYN174t4qy4kKFKI1LWqFh8QXYteBSlO9nms50+VRREpYQ09WmOritdYjqY8pvO4T1shpOnDiBjIwMFBUVKaoisYtKFpUwzQeoSv+ZIPXKd/PrxfACddLOhLORRSB1q201b+9saN7e3wshhvRNFtrBgwexbds2FBQUKP2Q+WupzVSkzqXUJ8c0Xg9TLX8N9Np1WDj5Xmycch2m9yIhDt5NBWGGs5+kyPgVcRW3GaccYIxCJYlsukhBOO0XCG24GMH1FyOw9jL411yuwL6U8cpKxiurLoOB27WLNGhYQiItI5GWXolZU99HQ9VeKgt9qckOk4WrLZaAI+GFMW5CwN9AlwRUeqqRLNiFid8uR5b8qDsvE/Kzo7gvrPxeWF45aYqF0VBfheqaEjQhBIujHk3M8ozWYyg9VaS8xxRHOSp0RbCSnGbYYKhvhMcmt7eyUXf6N+TwBpJocKcjwhWk9VcB7jh0Bg9yLTqS2o/a+hyUwIqQJYi8epZngOiz8pynArCbYaoIQO8KQB4yB5xB6BqNymszsiDrTFropR7EYNbVQmuhK+QeTurk/jXC9dUogAkJh5MLxgmLj8YOmBAP2+UpFyptEdTI7zFiIaDsAE7V5Sr3GRO1BciRBn0mlPGUr+EIbAkH7A1a1Fjiyu9pzOlj8fnGMhhLMtDkp9uX28ZJF2qqapHgwOuNduVdK5uvDhGO067zQ+fQIhYPwl9Zh0owk7KSLG4nMwOvByFzMdZ88wb2Tv0zDk38JeKMQaJUE4lJAqIYhKocfh7zMtvx0D25mRY7Gcg6qCY2ZjxWKoyFSqNnENu4XEhyMSpJlCpuV5Iop2ZrkDPxMmzdMAY2/XE0hbnybG7YnCE4QhGYQnaYYybYrGXyYBcO0P8e3YgBQ6eiWB7xZh3AqI0HMWzIcCxdvASFBXmcDk6KzYhRw79Az4/fxfCh/ZB5XAc6MJhJxIF9x6PfgJcwkMcLSsKoYWwkTyotrm2o1m7CzHE2TJrZFW92eovlBqG0xsjpceL7HgMwb8EaTNmwCsbcLOzcvRzPfNYJQ/sOwbzl26A1BEmsCjj0tRg/eDw+6voBevYeh+zS49DV6NmPUXi787uYNOM7OENcBDYDhg8bhKFffIrePdaTVHRT+fPQYfgzePvBd7GhlJYLAtt3jUX7t19H797v4YvPP4aTCtFIZnnJGu2pXNTvWIQdxzLRc+Q3GNinOybPT4e2IBsOuvTD+9LR7u3XMGXMMHy3eIPyRD52dCZen7qH02QmiU7ilS5d8W6nF9m/ETh6rAR2XwSeuBPF1Vk4nn0Uy+auw5djBqHvJz0w8ZP+XJxuLogQyeJIIig/SDf4sbj/29g68DY0zP0jg9oLkchhsMqMJ8wANsh4RUWI+34qjJfkcTN2kSzJRsJIpmQiWYzilpgF1VJZyuZfSJL8Ag0bLkLF6otw7LsrsGXYNags3oKguwrRIOngoNT5Y7B4fGh0GmCPWmjkYgQYtlg5peHjW9Dvi4kopYVDGdvxbP+vYA/4lRXn8jhRkJ/D1VqPmNcBQ1UJVs39DplFLhTUH8SosZOxY1M+LNZcbEpfj6/HbUVJXSkcllrEuVCr9Avweb9xOJhRjTAlILNyKPp/tgWFjdnYNXUeZs5ejhKfAzWHMtC3X0ecCDfC1ejE16P64sguLczRzRg1cQ5Wrs9jf7SKse3WPfhq5NeorW6Aj+517OSJ2LpvJxoM9Zg6ZQL09ZUwehqRU6XF/ok7caxRi6SpFLn8l5G2HoP6fAOb34P6+lIsXfg9svPzqXQUOvavlsqau+wrdB86AyarC0VGFxZPG4js8jJUndiNUZPnKGpRnLsPA8ZOQFYNjVu/CT2WFcJSlq3MzYr0ffB7tDiRk4dJUxbgZHkt1U9e6HGjvq4KX/YbhVpTDU7kZWHO8DFYkLsbAb2VZKGEBeSdKUsEC/s8ic2fM/3ddiPie69EbPdVCO+4EsGtV8G/+Rr4068nboR/001wrLke9lU3wLL8WhiXXAfdgmtIsqtRO+sq1My8EtpVGpTPpJJMIWGmU1XmMwOaoUHG+Muxecgt8DkrEAka4HaY6UddCAQZp9Cf1pkb4Iq5EA7pUF0eRrU88tWewOgJ83Ey5mUwvQudvp6HPcePoULfAH9UfkRAJ1NUgEXfTsHUYV/i/Refxdfz9qA+WIkPqA7ydobTWQKfy43+PRfR7XoQ5WIxW3Jx/OQsfDU4G9WNxxCONyEjKw2jxy/BKV0OZvX5Eg1aJ+RF25Ld2xVlKabT8Bm8sFamYfKX21EbmYGPhsxV5L7QsBKeGm741+K1F18n6b7ApwMG4pWOb2HD9nQcOLoffakERw/sRpSqmUfSzPnkbUxJn4CyPfnIodrVnCjF6lUT4I3G4fXYcTxzH4aMHKM8rQ6Ir4w5sWNKX+zIZVao1dK5MjKY+w4mbduBwk1f4eHXP0PfHiMwZkg3jJ85A3tPVUK7fgg+WpwHT20RBvXsAR07m4zZYdSbMGbcdJyqqEOdpRomVxVqqssxatAENFhPv+pyPG0rRm1aiIjZCQ3jIDBbpbOzYOXIu3DwG8YrpyRmIehysJcxyi6mzjsYr2y/Ath2NXENkun/hkQaCbXhSoRWXwH/isvhWXopnAsvgWPBxXCuYXyygCBhbHPpluh+Sr/XoGT2H1CzogMiISsDMCtMRq2S5QSCYZjtNjRyP6C8LO0AxQKNEfp5fT6Gj5uNE1QhZB/EZ4s2ywJGo8NCdWQ6HfRg4ZwZWPL9NLhqK1GwZzsmLtgHU7IRvT4dxtiECmU9CafVhr7d5jA+MoJNw+k6iZKaZZgyqgA12izlTcxDuVswYfJqGEK1WDpoLKprLShiBRlLF2L12ukKWZo8SZjLN2DiwC2oCn6Hrl/MVMiSp10GzjeafGuwZ+teNNTp0GgwwhMNceUm4fI7cWD/buzeloY+fedCFyRjTaeQXrQec4ZOw+zMUyg+kocli0fDzNjH7XLgOAn2+aAh7A9gC1JLozbsnd4PW7I8MFVXo5AxmJBl+Yl8Tlkmlu+rBDmGipN7UGW1KG7ItetrdJ1/HEFtOQb37oWSet9ZyXKsMFN5BUbI8u2BjYzZkiQLR2m3BhCyn8TCMa2xYypdCN2K+kwnwG3lmQ5djNxg8/wAuQtrXU8yrNXAQHejZTzSsFiDuoV0PyRJ2axWKJ16Maom/Rtqp1yM/PFUlTGtkDPnSWjpk90ckbwbbDIZlHd85YUyp9ulGDIUCcLjrmEsJcGoFcGsdHzYewSOuU2Ksnz43Qq4wiEYbBa4vS40NtRg2cK5yDt6AFHKyDfDB2LdrhJkV+zG2K+mYcv6HBiMWdjG1f3d1AxU6qpIRIbJ9PFW/wYM/Pxr7N1Vprw2W6j/CiOH70cNlShnyQas27ALOipX47HD6NXnLWT7a+FscGD8iN44uL2esQT9++hvsWDZUVbHwJqxhc2yGx+80w3Zx3KVd5/MdJWV2lpYlRfQYjA2VqPbJ11QrKdVqery46i8HSswt2guNi1ZiC96T4SewbfZaMKG1StwOCsHxQYXycI0uOwoSqkggyatgI9qXGL24NtRH2P93j3Yu2EuegwYBY+PEtTkxtGicoUsKF6OVyfthrM6D+nL52POivSzuqEoR5NIhnF0bZqiLIobkkfjNqZGdksZVn3/Ho4sfgGFS+9H/vIbkLfseuQsvgbZC69BFt3MsXnXKsiafx0Oz7oSh2ZehYMzrsT+767CvmlXMTi+GnsmX4Pdk67Glkl3YPPoO7B7NNVqfGukjbwR84f9J9bO+QDH9q+HwWInc6PKS+9CEHk/WCA/dQz6A7BaSpWYpS7YgNiJ7Rg3aRFKmhhQHtipBLgBXxBWs4WBsLwpGKext6Jzx9fQr083fDt1DL6bmc6AkLGBwYpPPh6B3p8+j3HfjKCro6JIwMaVavfu5EStwBcf5WHAiLbo2KUTho0eh/I6M3SBasz/bDgys4qQbWxQsqGcEzvweJ830b3jx1i0miQyhhAMlcLEdGpk/5H4oMt7JNR45FXlw2f3YzxjhnavvobBY0ZiX+ZBbNi8Ht0/7op33noFu3eEUagrx6rR7fBCvwcwostYHJChkGwHj0xFh3d7KgHouJHD4PSFoKeUUkRgrsxE/uph+Hr2LHTo+yXGM2DecqiU0S/njefzs/fh9S5vY2CvD9FnyNc4ySDcsmUs3pjGzDNBJTaUomP3XmcNcCt1FdDp63Byx15M3LUKzlodNJYAU7RkAvLieT6Dx2DREdgzVkOfuQHaI+vQcGgN6g6sQs3+ZX8D/bF1CnRH17NcGhoPpaHh4CbUH0hX0Fg0D7XHZsGYOROu/GkMO0Yh//hElDUcE1OhUW+DvFAof0rDYjMrriQaCcHrZkrp8SPJgdlMQKmDXpmrOb/ExBXOz6kcZJJEhhp5S5HhTE0NGmup/VyxXqabNfUcvFsLJxet08vAlm5AvJormIviunwYuV3uq4LX7oTd6EatcQUWzjqMuno9Qgwg7fF9dE9AtYPK40nAag8j387lT7KUlB1S3JAYtJxuTIznt8lvWsooUUYakgQOxBSXVF1So6TO7CIqGuvgi8vKjTMYP85VH0FlA2M1CkAyv0FJnROMv8pEB6hE8iqMxZVQfvQttwZc/jCq7DS6P4iEsxy7vv8I+45vl5/eIEa1OCYk8xiQzW9HVQZr8SDBZOFYkQFWiXP82ThMDxYy5MNtKFRIdbbUOdDkV/7MCMwO5P3wZ0006k2ovxfqza0zIfVmTks3z+T7H4G0odYp9al3RtVb1y1dkwq54SfuLzs7Gzt37kReHgNAHpd65G5n8/LNoY6z+bjU+Wl+sy71vHrupyBl5AaaxHNSvzzsk/aKi4uxb98+5QZlQ0ODck69K6v+3EDaaqnOVKh9+nugkQGcCS1d8HNCS31ORUvX/F9Aba8lo4iBxYhiTCGxkFT2xdCNjY0/PvNSn82k1tVSW6lQxyh1/28WpNrWmdC8/Hmy/ANQCdFSe6oB5bhqeNWYQgx55iUqIOfVh3nq4wNVIVPrawlqm/9vZGl+4DzOHanuRCZXNZrqomRfNb4cl3eq5ZmXbKvkUCHlVCPJthCopTZToRr0f0uWvxcaqfxMaOmCnxNa6nMqWrrmn4lUosi+tKkSRVUN9bgYUo7JTwjE9UgsIoQQYqjnBWrd52Lsf5QsUvan0Ly8Rm2kJTQv/HNDS31ORUvX/LOROrlquyphZFv9jYmUFTWRQFUMqT4VlutSf4ei1qMGqj+Ff5Qs6jVnQvPy58nyD0AlhUoMFWIwgaokAtlXYxH5Vo0p16pZjBxLJVDz9prj/50sqQNujuaFf25oqc+paOmafybEyGJUMbS0JxOsGkugHhNIGSkvkH1xX1JWPS7HVDKJoeV4alst4R8lS+pctYTm5X9SWc7jPFJxnizncc44T5bzOGecJ8t5nCNc+G/9OU2bLCbBIwAAAABJRU5ErkJggg==" InformativeScreenshot="9573e45418680aa166c6a5280bf9880a.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Digite O'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Text="[in_strNumeroPasta]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable CvType="InputBox" DesignTimeRectangle="519, 99, 418, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Digite O'" Guid="a8f2f4ce-c185-4e94-bbc0-7c882b77a75d" InformativeScreenshot="6b9073bb1efccbb0b6e141412759a693.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArgument="Digite O valor do campo Pasta" CvType="Text" DesignTimeRectangle="519, 77, 173, 16" ElementType="Text" FriendlyName="'Digite O'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3602c6e-0b87-43b8-a963-1eacf7467308" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CvElementArea="769, 157, 81, 34" CvTextArea="800, 167, 19, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="769, 157, 81, 34" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'OK'" Guid="1f148711-6585-42d6-b511-927cb32e6c85" InformativeScreenshot="1d2b135e6ca413e33bab0188a095e367.png" ScopeSelectorArgument="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                      <uix:Target CvTextArgument="Digite O valor do campo Pasta" CvType="Text" DesignTimeRectangle="519, 77, 173, 16" ElementType="Text" FriendlyName="'Digite O'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                      <uix:Target CvElementArea="855, 157, 82, 34" CvTextArea="872, 167, 49, 12" CvTextArgument="Cancelar" CvType="Button" DesignTimeRectangle="855, 157, 82, 34" ElementType="Button" FriendlyName="'Cancelar'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1456, 868" FilePath="C:\PROGRA~2\Citrix\ICACLI~1\wfica32.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALsSURBVDhPdVNrSFNhGH52d9Ntuc3LZub9sgoXrkLyVgrp0kj6VZYFWqZZf8QfqRCs/gRKGBSkZpluaAYrwtBurCS12hy6NIP80VbojzBLM52ap+98LrtIz+E7vLfnfd/zvt/BKjgcjlcC/KRS7MzIQGHJSRwrO43dBgMUSqXXS2K5XK/0D3g8PsrKy+F4N4Z5hgHjPQvkjI5PoMpohFQup7F/FqTwJxVudT+gBNecB1fNZhwvLUVhcTEuNjbi7eQU9T0ZcGBDRATl0CTsi8fj4ca9TiyRAFP3Q0SHRbMeMZRREgTEkX4FUCvVqGtuoZ112ezwk8l+d7H/UAFmiaPd+gw+PB9f6LIjuE2jWoGV0QqeMlE800c5MotobF2riSY5VVVNdTqQ2719cC/9gDZeK0R8coisj9FIrIxSaLyjFFa3qSXdnlDpACPmZh6Gyl8F59QX9Ljc8CXDhiY8HEPf52F+3svm4627bBUEv1rkijIO0AIEHL4ujR/UM80PtHyghlqTGW7SxbbUNCAlKwufiVLT0gKO0BfxwwzCOt/TQPKR7GqoGFRrQdwoA6hCUVRRgfHlZewtKABiE3SoudaE3Px8gC9CyPkGqE6cYdmU+AuR1x9DP0YSKIJRXFkFF0lgOEg4f2OFJCDPCtgOhAjKL0HqBIMtnQ5qvXS/C0PLDLR6PZC+KwN9ztfoHHSiY8DB6XA6pSm1rTQwtvoc0ofdMMwwyP7kgThBj8iYGNg9C2gl8XwBKZSdkwPX9CzsUzOwzXwTlo0zMlG9jSZIvNKEfZNzSGq/C/FGHaR+UjT0v8QbMrM9R47SGJpFrlBARq6oLDwGmh4P1jfTjbBOQCimoi4pCY2OQYwQ8tm2drr+NdcZciW2jyxis+UFVXOLimAkK6snxH5CtJFT2XwTIolkZUOrYP8uYhAFqmEYn0fKo35qZivZCcnydRoXyOCS8/Ko/b/gCIQISNsJ/8StVA+Ni8OmHclQaDRUXwPgJ9N5BMphoVdcAAAAAElFTkSuQmCC" InformativeScreenshot="f92e3e8b8561e2233b9eb8d703e1bc41.png" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Projuris Web - \\Remote' /&gt;" Title="Projuris Web - \\Remote" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
